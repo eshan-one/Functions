@@ -1,49 +1,44 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
-int digit_checker(int number,int digit);
+
+int digit_checker(int,int);
 int main()
 {
-  int n,digit,r;
+  int n,d;
   int a;
   printf("Enter the number:\n");
   scanf("%d",&n);
+
   printf("\nEnter the digit:\n");
-  scanf("%d",&digit);
+  scanf("%d", &d);
 
-  a = digit_checker(n,digit);
+  a = digit_checker(n,d);
 
-  printf("\n%cYes the number containes the digit", a);
+  printf("%d",a);
 
   return 0;
-
-}
-
+  }
 
 
 
-int digit_checker(int number,int digit)
-{
-  int remainder;
-  char Y;
 
-  while(number>0)
+  int digit_checker(int number, int digit)
+  {
+    int remainder;
+    while(number)
     {
-      remainder = number%10;
+      remainder=number%10;
+
       if(remainder==digit)
+      
       {
-        printf("%c",'Y');
-        break;
-      }
-
-      else
-      {
-        number = number/10;
-        
+        return 1;
         
       }
+      number = number/10;
+      
     }
-
-  return Y;
-}
-
+  return 0;
+  }
+  
   
